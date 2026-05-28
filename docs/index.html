@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GraphClaw Docs Index</title>
+    <meta
+      name="description"
+      content="Curated index for GraphClaw backend and cockpit documentation."
+    />
+    <style>
+      :root {
+        --bg: #f8fafb;
+        --ink: #10212c;
+        --muted: #4e5f69;
+        --line: #d8e0e6;
+        --accent: #005f71;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Segoe UI", "Segoe UI Variable", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 26px 18px 56px;
+      }
+
+      h1 {
+        margin: 0 0 6px;
+        font-size: clamp(1.65rem, 3vw, 2.2rem);
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .section {
+        margin-top: 18px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px;
+      }
+
+      .section h2 {
+        margin: 0 0 10px;
+        font-size: 1.06rem;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 7px 0;
+      }
+
+      a {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>GraphClaw Documentation Index</h1>
+      <p>Canonical docs entrypoint for backend, cockpit, and launch operations.</p>
+
+      <section class="section">
+        <h2>Backend (graphclaw)</h2>
+        <ul>
+          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/README.md">Backend README</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw/tree/main/docs">Backend docs hub</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/how-to/self-host.md">Self-host guide</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/architecture.md">Architecture</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/api-reference.md">API reference</a></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Cockpit (graphclaw-cockpit)</h2>
+        <ul>
+          <li><a href="https://github.com/graphclaw/graphclaw-cockpit/blob/main/README.md">Cockpit README</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw-cockpit/tree/main/docs">Cockpit docs hub</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw-cockpit/blob/main/docs/how-to/self-host.md">Self-host guide</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw-cockpit/tree/main/docs/prd">Cockpit PRD</a></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Launch Operations</h2>
+        <ul>
+          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/how-to/release.md">Release process</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/explanation/versioning.md">Versioning policy</a></li>
+          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/explanation/deprecations.md">Deprecation policy</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

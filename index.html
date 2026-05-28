@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GraphClaw | Open-Source Task Orchestration</title>
+    <meta
+      name="description"
+      content="GraphClaw is an open-source graph-based task orchestration system for humans and AI agents."
+    />
+    <meta property="og:title" content="GraphClaw" />
+    <meta
+      property="og:description"
+      content="Open-source graph-based task orchestration for humans and AI agents."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://graphclaw.ai/" />
+    <meta property="og:image" content="https://graphclaw.ai/social-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GraphClaw" />
+    <meta
+      name="twitter:description"
+      content="Open-source graph-based task orchestration for humans and AI agents."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        --bg: #f6f7f9;
+        --ink: #162129;
+        --muted: #45545f;
+        --accent: #006d5b;
+        --accent-2: #004a7a;
+        --surface: #ffffff;
+        --line: #d8dee4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Segoe UI Variable", -apple-system, BlinkMacSystemFont, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 85% 15%, #d9f7ef 0%, rgba(217, 247, 239, 0) 50%),
+          radial-gradient(circle at 12% 88%, #d9ecfb 0%, rgba(217, 236, 251, 0) 52%),
+          var(--bg);
+      }
+
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 32px 20px 72px;
+      }
+
+      .hero {
+        background: linear-gradient(130deg, #0d2a40, #11556d 60%, #0d7d66);
+        color: #f7fbff;
+        border-radius: 22px;
+        padding: 42px 34px;
+        box-shadow: 0 18px 40px rgba(8, 35, 47, 0.28);
+      }
+
+      .kicker {
+        margin: 0;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 12px;
+        opacity: 0.82;
+      }
+
+      h1 {
+        margin: 10px 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.05;
+      }
+
+      .lead {
+        margin: 0;
+        max-width: 760px;
+        font-size: clamp(1rem, 2.1vw, 1.2rem);
+        line-height: 1.55;
+        color: rgba(247, 251, 255, 0.92);
+      }
+
+      .cta {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 140ms ease, opacity 140ms ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.94;
+      }
+
+      .btn.primary {
+        background: #f7fbff;
+        color: #0d2a40;
+      }
+
+      .btn.secondary {
+        background: rgba(247, 251, 255, 0.12);
+        color: #f7fbff;
+        border: 1px solid rgba(247, 251, 255, 0.32);
+      }
+
+      .grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px;
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 1.04rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .card a {
+        color: var(--accent-2);
+        text-underline-offset: 3px;
+      }
+
+      footer {
+        margin-top: 22px;
+        color: #5a6872;
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding: 28px 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <p class="kicker">Open-source orchestration</p>
+        <h1>GraphClaw</h1>
+        <p class="lead">
+          A graph-based task orchestration system where humans and AI agents collaborate with explicit
+          dependencies, scored priorities, and auditable lifecycle state.
+        </p>
+        <nav class="cta" aria-label="Primary links">
+          <a class="btn primary" href="/docs/">Read Docs</a>
+          <a class="btn secondary" href="https://github.com/graphclaw/graphclaw">Backend Repository</a>
+          <a class="btn secondary" href="https://github.com/graphclaw/graphclaw-cockpit">Cockpit Repository</a>
+        </nav>
+      </section>
+
+      <section class="grid" aria-label="Highlights">
+        <article class="card">
+          <h2>Self-host first</h2>
+          <p>
+            Launches as a self-hosted stack. Start with the
+            <a href="https://github.com/graphclaw/graphclaw/blob/main/docs/how-to/self-host.md">backend guide</a>
+            and
+            <a href="https://github.com/graphclaw/graphclaw-cockpit/blob/main/docs/how-to/self-host.md">cockpit guide</a>.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Auditable by design</h2>
+          <p>
+            Release process uses signed artifacts, SBOM generation, and provenance attestation with
+            maintainable governance docs.
+          </p>
+        </article>
+        <article class="card">
+          <h2>Pluggable architecture</h2>
+          <p>
+            Database, gateway, LLM, and infra layers are swappable via interfaces so new providers can be
+            added without rewriting core logic.
+          </p>
+        </article>
+      </section>
+
+      <footer>
+        <p>GraphClaw is released under Apache-2.0. For security disclosures, use the private advisory flow in the repository SECURITY policy.</p>
+      </footer>
+    </main>
+  </body>
+</html>
