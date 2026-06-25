@@ -3,108 +3,302 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GraphClaw Docs Index</title>
+    <title>GraphClaw Docs — Backend &amp; Cockpit Documentation Index</title>
     <meta
       name="description"
-      content="Curated index for GraphClaw backend and cockpit documentation."
+      content="Curated index for GraphClaw backend and cockpit documentation: self-host guides, architecture, API reference, and launch operations."
+    />
+    <link rel="canonical" href="https://graphclaw.ai/docs/" />
+    <meta property="og:site_name" content="The Agents and Actions" />
+    <meta property="og:title" content="GraphClaw Documentation Index" />
+    <meta property="og:description" content="Backend, cockpit, and launch-operations docs for GraphClaw." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://graphclaw.ai/docs/" />
+    <meta property="og:image" content="https://graphclaw.ai/social-card.svg" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #f8fafb;
-        --ink: #10212c;
-        --muted: #4e5f69;
-        --line: #d8e0e6;
-        --accent: #005f71;
+        --brand: #0ea5e9;
+        --brand-hover: #0284c7;
+        --brand-dark: #0369a1;
+        --brand-light: #e0f2fe;
+        --ink: #0f172a;
+        --muted: #475569;
+        --surface: #ffffff;
+        --bg: #f8fafc;
+        --line: #e2e8f0;
+        --on-dark: #f0f9ff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --brand: #38bdf8;
+          --brand-dark: #7dd3fc;
+          --brand-light: #0c2a3f;
+          --ink: #e2e8f0;
+          --muted: #94a3b8;
+          --surface: #0f1b2d;
+          --bg: #0a0f1e;
+          --line: #1e293b;
+        }
       }
 
       * {
         box-sizing: border-box;
       }
-
       body {
         margin: 0;
         background: var(--bg);
         color: var(--ink);
-        font-family: "Segoe UI", "Segoe UI Variable", -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
-
+      img {
+        max-width: 100%;
+      }
       .wrap {
-        max-width: 980px;
+        width: 100%;
+        max-width: 960px;
         margin: 0 auto;
-        padding: 26px 18px 56px;
+        padding: 0 20px;
       }
 
+      .parentbar {
+        background: var(--ink);
+        color: var(--on-dark);
+        font-size: 0.82rem;
+      }
+      .parentbar .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
+        align-items: center;
+        justify-content: center;
+        min-height: 36px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: center;
+      }
+      .parentbar a {
+        color: var(--on-dark);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .parentbar a:hover {
+        text-decoration: underline;
+      }
+      .parentbar .muted {
+        opacity: 0.72;
+      }
+
+      header.site {
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+      }
+      header.site .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        align-items: center;
+        min-height: 60px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 1.15rem;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        color: var(--ink);
+        margin-right: auto;
+      }
+      .brand img {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+      }
+      header.site nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 6px;
+      }
+      header.site nav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 0 12px;
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 8px;
+      }
+      header.site nav a:hover {
+        color: var(--ink);
+        background: var(--brand-light);
+      }
+
+      main.wrap {
+        padding-top: 40px;
+        padding-bottom: 64px;
+      }
       h1 {
         margin: 0 0 6px;
-        font-size: clamp(1.65rem, 3vw, 2.2rem);
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        letter-spacing: -0.02em;
       }
-
-      p {
+      .intro {
         color: var(--muted);
-        line-height: 1.55;
+        margin: 0 0 28px;
       }
-
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 720px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
       .section {
-        margin-top: 18px;
-        background: #fff;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 14px;
-        padding: 16px;
+        padding: 20px;
       }
-
       .section h2 {
-        margin: 0 0 10px;
-        font-size: 1.06rem;
+        margin: 0 0 12px;
+        font-size: 1.08rem;
       }
-
       ul {
         margin: 0;
-        padding-left: 18px;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+      li a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        color: var(--brand-dark);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      li a:hover {
+        text-decoration: underline;
       }
 
-      li {
-        margin: 7px 0;
+      footer.site {
+        background: var(--ink);
+        color: #94a3b8;
+        font-size: 0.88rem;
       }
-
-      a {
-        color: var(--accent);
+      footer.site .wrap {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      footer.site a {
+        color: #e2e8f0;
+        text-decoration: none;
+      }
+      footer.site a:hover {
+        text-decoration: underline;
+      }
+      footer.site strong {
+        color: #e2e8f0;
       }
     </style>
   </head>
   <body>
+    <div class="parentbar">
+      <div class="wrap">
+        <span class="muted">Part of</span>
+        <a href="https://theagentsandactions.com" rel="me">The Agents and Actions ↗</a>
+        <span class="muted">— a family of open agent &amp; automation projects.</span>
+      </div>
+    </div>
+
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href="/">
+          <img src="../logo.svg" alt="GraphClaw logo" />
+          GraphClaw
+        </a>
+        <nav aria-label="Primary">
+          <a href="/#features">Features</a>
+          <a href="/#how">How it works</a>
+          <a href="/#architecture">Architecture</a>
+          <a href="https://github.com/graphclaw/graphclaw">GitHub ↗</a>
+        </nav>
+      </div>
+    </header>
+
     <main class="wrap">
-      <h1>GraphClaw Documentation Index</h1>
-      <p>Canonical docs entrypoint for backend, cockpit, and launch operations.</p>
+      <h1>Documentation Index</h1>
+      <p class="intro">Canonical docs entrypoint for the GraphClaw backend, cockpit, and launch operations.</p>
 
-      <section class="section">
-        <h2>Backend (graphclaw)</h2>
-        <ul>
-          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/README.md">Backend README</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw/tree/main/docs">Backend docs hub</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/how-to/self-host.md">Self-host guide</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/architecture.md">Architecture</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/api-reference.md">API reference</a></li>
-        </ul>
-      </section>
+      <div class="grid">
+        <section class="section">
+          <h2>Backend (graphclaw)</h2>
+          <ul>
+            <li><a href="https://github.com/graphclaw/graphclaw/blob/main/README.md">Backend README ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw/tree/main/docs">Backend docs hub ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/how-to/self-host.md">Self-host guide ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/architecture.md">Architecture ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/api-reference.md">API reference ↗</a></li>
+          </ul>
+        </section>
 
-      <section class="section">
-        <h2>Cockpit (graphclaw-cockpit)</h2>
-        <ul>
-          <li><a href="https://github.com/graphclaw/graphclaw-cockpit/blob/main/README.md">Cockpit README</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw-cockpit/tree/main/docs">Cockpit docs hub</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw-cockpit/blob/main/docs/how-to/self-host.md">Self-host guide</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw-cockpit/tree/main/docs/prd">Cockpit PRD</a></li>
-        </ul>
-      </section>
+        <section class="section">
+          <h2>Cockpit (graphclaw-cockpit)</h2>
+          <ul>
+            <li><a href="https://github.com/graphclaw/graphclaw-cockpit/blob/main/README.md">Cockpit README ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw-cockpit/tree/main/docs">Cockpit docs hub ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw-cockpit/blob/main/docs/how-to/self-host.md">Self-host guide ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw-cockpit/tree/main/docs/prd">Cockpit PRD ↗</a></li>
+          </ul>
+        </section>
 
-      <section class="section">
-        <h2>Launch Operations</h2>
-        <ul>
-          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/how-to/release.md">Release process</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/explanation/versioning.md">Versioning policy</a></li>
-          <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/explanation/deprecations.md">Deprecation policy</a></li>
-        </ul>
-      </section>
+        <section class="section">
+          <h2>Launch Operations</h2>
+          <ul>
+            <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/how-to/release.md">Release process ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/explanation/versioning.md">Versioning policy ↗</a></li>
+            <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/explanation/deprecations.md">Deprecation policy ↗</a></li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Roadmap &amp; Planning</h2>
+          <ul>
+            <li><a href="https://github.com/graphclaw/graphclaw/blob/main/docs/planning/public-roadmap.md">Public roadmap (Now / Next / Later) ↗</a></li>
+            <li><a href="/">← Back to graphclaw.ai</a></li>
+          </ul>
+        </section>
+      </div>
     </main>
+
+    <footer class="site">
+      <div class="wrap">
+        <span>Part of <strong>The Agents and Actions</strong> · GraphClaw is released under Apache-2.0.</span>
+        <a href="https://theagentsandactions.com" rel="me">theagentsandactions.com ↗</a>
+      </div>
+    </footer>
   </body>
 </html>
